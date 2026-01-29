@@ -1,0 +1,12 @@
+# Redirecionar páginas não encontradas para 404.html
+ErrorDocument 404 /404.html
+
+# Outras configurações úteis
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Remove a extensão .html das URLs (opcional)
+    # RewriteCond %{REQUEST_FILENAME} !-f
+    # RewriteCond %{REQUEST_FILENAME} !-d
+    # RewriteRule ^([^\.]+)$ $1.html [NC,L]
+</IfModule>
