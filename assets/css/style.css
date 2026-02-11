@@ -4985,15 +4985,34 @@ ul.slick-dots li.slick-active button {
     line-height: 60px;
   }
 }
+.page-banner-content h1 {
+  -webkit-text-stroke: 0.35px rgb(145, 117, 79);
+  text-stroke: 0.35px rgb(145, 117, 79);
+  /* subtle fallback for browsers without text-stroke */
+  text-shadow: 0.2px 0.2px 0 rgb(145, 117, 79), -0.2px -0.2px 0 rgb(145, 117, 79);
+}
 .page-banner-content ul.breadcrumb-link li {
   display: inline-block;
   font-size: 18px;
   font-weight: 500;
 }
+.page-banner-content ul.breadcrumb-link li a,
+.page-banner-content ul.breadcrumb-link li.active {
+  -webkit-text-stroke: 0.25px rgb(145, 117, 79);
+  text-stroke: 0.25px rgb(145, 117, 79);
+  text-shadow: 0.15px 0.15px 0 rgb(145, 117, 79), -0.15px -0.15px 0 rgb(145, 117, 79);
+}
 .page-banner-content ul.breadcrumb-link li:not(:last-child):after {
   content: "-";
+  display: inline-block;
   margin-left: 13px;
   margin-right: 10px;
+  -webkit-text-stroke: 0.25px rgb(145, 117, 79);
+  text-stroke: 0.25px rgb(145, 117, 79);
+  text-shadow: 0.15px 0.15px 0 rgb(145, 117, 79), -0.15px -0.15px 0 rgb(145, 117, 79);
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
 }
 
 /* Text Box */
@@ -5877,4 +5896,44 @@ ul.slick-dots li.slick-active button {
     }
 }
 
+/* Contact section bottom spacing so map follows inside same flow */
+.contact-section {
+  padding-bottom: 80px;
+}
+@media (max-width: 767px) {
+  .contact-section {
+    padding-bottom: 40px;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
+
+/* Mobile nav toggle and responsive menu */
+.mobile-nav-toggle{
+  display:none;
+  background:transparent;
+  border:0;
+  font-size:22px;
+  color:var(--primary-color);
+  padding:8px 10px;
+}
+@media (max-width: 1199px){
+  .mobile-nav-toggle{ display:inline-block; position:absolute; right:18px; top:18px; z-index:9999; }
+  .primary-menu .main-menu{ display:none; }
+  .primary-menu.mobile-open .main-menu{
+    display:block;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    background:var(--white-color);
+    padding:18px 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    z-index:9998;
+  }
+  .primary-menu.mobile-open .main-menu ul{ display:block; }
+  .primary-menu.mobile-open .main-menu ul li{ display:block; margin:10px 0; }
+  .primary-menu.mobile-open .main-menu ul li a{ font-size:18px; }
+  /* show overlay when mobile menu open */
+  .mobile-nav-open .nav-overlay{ display:block; position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:9997; }
+}
