@@ -475,7 +475,7 @@ Version: 1.0
 
     //===== Datepicker
     $( function() {
-        $( "#datepicker" ).datepicker();
+        $( "#bookingDate" ).datepicker();
     } );
 
 
